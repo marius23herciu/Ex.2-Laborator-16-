@@ -50,13 +50,13 @@ namespace Ex._2_Laborator_16_
                 {
                     Console.WriteLine($"Vehicles produced by {group.name}:");
                 }
-                foreach (var vehicle in context.Vehicles.Include(p => p.Producer).ToList())
-                {
-                    if (vehicle.Producer.Name == group.name)
-                    {
-                        Console.WriteLine(vehicle);
-                    }
-                }
+
+                context.Vehicles
+                    .Include(p => p.Producer)
+                    .Where(v => v.Producer.Name == group.name)
+                    .ToList()
+                    .ForEach(v => Console.WriteLine(v));
+
                 Console.WriteLine();
             }
         }
