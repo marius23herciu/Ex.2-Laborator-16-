@@ -24,7 +24,10 @@ namespace Ex._2_Laborator_16_
              • Afisati toate autovehiculele in ordine
              descrescatoare a anului de fabricatie
              */
-            context.Vehicles.Include(v => v.Producer).OrderByDescending(v => v.YearOfProduction).ToList().ForEach(v => Console.WriteLine(v));
+            context.Vehicles.Include(v => v.Producer)
+                .OrderByDescending(v => v.YearOfProduction)
+                .ToList()
+                .ForEach(v => Console.WriteLine(v));
 
             Console.WriteLine();
             /*
