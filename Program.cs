@@ -43,8 +43,7 @@ namespace Ex._2_Laborator_16_
              */
 
             var groupVehiclesByProducer = context.Producers
-                   .GroupBy(p => p.Name)
-                   .Select(g => new { name = g.Key });
+                   .Select(n => new { name = n.Name });
 
             foreach (var group in groupVehiclesByProducer)
             {
