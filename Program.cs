@@ -47,9 +47,7 @@ namespace Ex._2_Laborator_16_
 
             foreach (var group in groupVehiclesByProducer)
             {
-                {
-                    Console.WriteLine($"Vehicles produced by {group.name}:");
-                }
+                Console.WriteLine($"Vehicles produced by {group.name}:");
 
                 context.Vehicles
                     .Include(p => p.Producer)
